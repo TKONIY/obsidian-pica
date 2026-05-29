@@ -4,7 +4,9 @@ A minimal, focused Obsidian theme built around a typewriter aesthetic — warm p
 
 > Named after *pica*, the 10-characters-per-inch pitch of a classic typewriter.
 
-<!-- Add a screenshot here, e.g.:  ![Pica](preview.png)  (commit a preview.png to the repo root) -->
+<p align="center">
+  <img src="assets/pica-theme.gif" alt="Pica — a typewriter theme for Obsidian, shifting between light and dark" width="840">
+</p>
 
 ## Features
 
@@ -38,6 +40,12 @@ Pica ships with a [Style Settings](https://github.com/mgmeyers/obsidian-style-se
 ## Fonts
 
 The Latin fonts (Cutive, Cutive Mono) load from Google Fonts via an `@import` at the top of `theme.css`, so the first load needs an internet connection on desktop. CJK glyphs use whatever 仿宋 / Songti face your system provides. To bundle the fonts offline, download the WOFF2 files and replace the `@import` with local `@font-face` rules.
+
+## Screenshots
+
+| Light — fine writing paper | Dark — night manuscript |
+| :---: | :---: |
+| ![Pica in light mode](assets/pica-light.png) | ![Pica in dark mode](assets/pica-dark.png) |
 
 ## License
 
