@@ -302,6 +302,47 @@ body.pica-no-focus .markdown-source-view.mod-cm6 .cm-line { opacity: 1; }
   color: var(--ink-faint);
 }
 
+/* ---- Live Preview: carry the reading-view flourishes into the CM6 editor ---- */
+
+/* Blockquote — the serif epigraph treatment while editing.
+   The teal 2px bar is already drawn via --blockquote-border-color;
+   .is-live-preview matches app.css specificity so our font-style wins on order. */
+.markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote,
+.markdown-source-view.mod-cm6 span.cm-quote {
+  font-family: var(--font-serif-type);
+  font-style: italic;
+  color: var(--ink-muted);
+}
+
+/* En-dash bullets — repaint CM6's round .list-bullet dot as a typewriter hyphen */
+.markdown-source-view.mod-cm6 .cm-formatting-list-ul .list-bullet::after {
+  content: '\2013';
+  position: static;
+  width: auto;
+  height: auto;
+  min-width: 0;
+  border-radius: 0;
+  background-color: transparent;
+  box-shadow: none;
+  color: var(--ink-faint);
+}
+/* …but a task line keeps only its checkbox — no stray hyphen marker */
+.markdown-source-view.mod-cm6 .HyperMD-task-line .cm-formatting-list-ul .list-bullet::after {
+  content: none;
+}
+
+/* Asterism divider for an inactive --- line */
+.markdown-source-view.mod-cm6 .HyperMD-hr.hmd-inactive-line {
+  text-align: center;
+  color: transparent;
+}
+.markdown-source-view.mod-cm6 .HyperMD-hr.hmd-inactive-line::after {
+  content: '· · ·';
+  color: var(--ink-faint);
+  letter-spacing: .5em;
+  font-size: 1.1em;
+}
+
 /* ---- Code ---- */
 .markdown-rendered :not(pre) > code {
   background: var(--code-background);
